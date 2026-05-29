@@ -3,9 +3,11 @@ import pandas as pd
 import numpy as np
 import joblib
 
-model         = joblib.load('model.pkl')
-scaler        = joblib.load('scaler.pkl')
-feature_names = joblib.load('feature_names.pkl')
+BASE_DIR = os.path.dirname(__file__)
+
+model = joblib.load(os.path.join(BASE_DIR, 'model.pkl'))
+scaler = joblib.load(os.path.join(BASE_DIR, 'scaler.pkl'))
+feature_names = joblib.load(os.path.join(BASE_DIR, 'feature_names.pkl'))
 
 st.set_page_config(
     page_title="Churn Predictor",
